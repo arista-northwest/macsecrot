@@ -9,57 +9,57 @@ import (
 	"github.com/aristanetworks/goeapi"
 )
 
-/* eAPI JSON reference for Go structures
-{
-    "interfaces": {
-        "Ethernet3/1/1": {
-            "portId": 455,
-            "details": {
-                "oldKeyTransmitting": true,
-                "keyServerPriority": 4,
-                "oldKeyReceiving": true,
-                "oldKeyMsgId": "3e48b33fa2dae48c539b8c3c",
-                "fipsPostStatus": "none",
-                "oldKeyMsgNum": 769,
-                "latestKeyMsgId": "",
-                "latestKeyReceiving": false,
-                "latestKeyTransmitting": false,
-                "traffic": "Protected",
-                "localSsci": "00000001",
-                "latestKeyMsgNum": 0,
-                "sessionReKeyPeriod": 1800.0
-            },
-            "address": "28:99:3a:82:68:62",
-            "controlledPort": true,
-            "keyNum": 769,
-            "keyMsgId": "3e48b33fa2dae48c539b8c3c"
-        },
-        "Ethernet3/1/2": {
-            "portId": 456,
-            "details": {
-                "oldKeyTransmitting": true,
-                "keyServerPriority": 4,
-                "oldKeyReceiving": true,
-                "oldKeyMsgId": "1a7dd1cf2c3362a48e21f261",
-                "fipsPostStatus": "none",
-                "oldKeyMsgNum": 769,
-                "latestKeyMsgId": "",
-                "latestKeyReceiving": false,
-                "latestKeyTransmitting": false,
-                "traffic": "Protected",
-                "localSsci": "00000001",
-                "latestKeyMsgNum": 0,
-                "sessionReKeyPeriod": 1800.0
-            },
-            "address": "28:99:3a:82:68:5c",
-            "controlledPort": true,
-            "keyNum": 769,
-            "keyMsgId": "1a7dd1cf2c3362a48e21f261"
-        }
-    }
-}
-*/
-
+// /* eAPI JSON reference for Go structures
+// {
+//     "interfaces": {
+//         "Ethernet3/1/1": {
+//             "portId": 455,
+//             "details": {
+//                 "oldKeyTransmitting": true,
+//                 "keyServerPriority": 4,
+//                 "oldKeyReceiving": true,
+//                 "oldKeyMsgId": "3e48b33fa2dae48c539b8c3c",
+//                 "fipsPostStatus": "none",
+//                 "oldKeyMsgNum": 769,
+//                 "latestKeyMsgId": "",
+//                 "latestKeyReceiving": false,
+//                 "latestKeyTransmitting": false,
+//                 "traffic": "Protected",
+//                 "localSsci": "00000001",
+//                 "latestKeyMsgNum": 0,
+//                 "sessionReKeyPeriod": 1800.0
+//             },
+//             "address": "28:99:3a:82:68:62",
+//             "controlledPort": true,
+//             "keyNum": 769,
+//             "keyMsgId": "3e48b33fa2dae48c539b8c3c"
+//         },
+//         "Ethernet3/1/2": {
+//             "portId": 456,
+//             "details": {
+//                 "oldKeyTransmitting": true,
+//                 "keyServerPriority": 4,
+//                 "oldKeyReceiving": true,
+//                 "oldKeyMsgId": "1a7dd1cf2c3362a48e21f261",
+//                 "fipsPostStatus": "none",
+//                 "oldKeyMsgNum": 769,
+//                 "latestKeyMsgId": "",
+//                 "latestKeyReceiving": false,
+//                 "latestKeyTransmitting": false,
+//                 "traffic": "Protected",
+//                 "localSsci": "00000001",
+//                 "latestKeyMsgNum": 0,
+//                 "sessionReKeyPeriod": 1800.0
+//             },
+//             "address": "28:99:3a:82:68:5c",
+//             "controlledPort": true,
+//             "keyNum": 769,
+//             "keyMsgId": "1a7dd1cf2c3362a48e21f261"
+//         }
+//     }
+// }
+// */
+//
 // type MacSecInterfaces struct {
 // 	Interfaces map[string]Interface `json:"interfaces"`
 // }
@@ -115,7 +115,7 @@ import (
 // func (s *MacSecStatus) GetCmd() string {
 // 	return "show mac security status"
 // }
-
+//
 // func main() {
 // 	node, err := goeapi.Connect("http", "tg219", "admin", "", 80)
 // 	if err != nil {
@@ -179,7 +179,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 		ok := node.Config("interface "+msg.Name, "description "+msg.Description)
 		if !ok {
-			panic("not ok")
+			panic("not ok!")
 		}
 	default:
 		// Nothing to see here...
